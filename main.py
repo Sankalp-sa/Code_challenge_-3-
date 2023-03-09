@@ -44,6 +44,8 @@ def handle_create_image():
         image = create_image(csv_file, red_field, green_field, blue_field)
         img_resize = cv2.resize(image,(500,500))
 
+
+        # Add path where you want to create saveimage.jpg in path variable
         path = r'C:\Users\Sankalp\OneDrive\Desktop\gsoc_2023\code_challenge_attempt2\static\Images'
         cv2.imwrite(os.path.join(path , 'saveimage.jpg'), img_resize)
 
