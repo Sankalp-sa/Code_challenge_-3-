@@ -7,10 +7,12 @@ import os
 app = Flask(__name__)
 
 def create_image(csv_file, red_field, green_field, blue_field):
-    # Read the CSV file into a NumPy array
+    
     data = pd.read_csv(csv_file, usecols=[red_field, green_field, blue_field])
 
+    # Read the CSV file into a NumPy array
     data_array = np.array(data)
+    
     # Normalize the data to be between 0 and 255
     data_array = (data_array - data_array.min()) * 255 / (data_array.max() - data_array.min())
 
